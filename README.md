@@ -1,6 +1,6 @@
-# TodoMVC with [Durruti](https://github.com/ghinda/durruti)
+# [TodoMVC](http://todomvc.com/) with [Durruti](https://github.com/ghinda/durruti)
 
-Micro isomorphic JavaScript library for building user interfaces.
+> Micro isomorphic JavaScript library for building user interfaces.
 
 ## Run the isomoprhic app
 
