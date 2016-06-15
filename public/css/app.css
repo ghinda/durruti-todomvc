@@ -1,0 +1,48 @@
+/* durruti-todomvc
+ */
+
+/* show the main and footer sections,
+ * only when we have tasks.
+ */
+.main,
+.footer {
+  display: none;
+}
+
+.has-tasks.main,
+.has-tasks.footer {
+  display: block;
+}
+
+/* accessible icon labels
+ */
+.icon-label {
+  overflow: hidden;
+  display: block;
+  height: 1px;
+
+  font-size: 0;
+}
+
+/* make the task complete icon work without input[type=checkbox]
+ */
+.todo-list li.completed .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>')
+}
+
+/* task delete button
+ */
+.destroy {
+  text-decoration: none;
+  text-align: center;
+}
+
+.destroy:after {
+  line-height: 40px;
+}
+
+/* make sure we don't get the :visited color on the clear-completed link
+ */
+.clear-completed {
+  color: #777;
+}
