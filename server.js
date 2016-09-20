@@ -24,7 +24,6 @@ app.use('/api/', apiServer)
 
 // durruti app
 var durruti = require('durruti')
-var state = require('durruti/state')
 var Router = require('./components/router')
 var taskListStore = require('./components/task/task-list-store')
 var routerStore = require('./components/router-store')
@@ -50,7 +49,7 @@ function defaultRoute (req, res) {
         ${durruti.render(Router)}
       </div>
 
-      ${state.render()}
+      ${taskListStore.options.state.render()}
 
       <footer class="info">
         <p>Double-click to edit a todo</p>
