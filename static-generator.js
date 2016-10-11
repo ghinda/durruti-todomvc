@@ -2,14 +2,19 @@
  */
 
 var server = require('./server')
-var ssg = require('durruti/static')
+var url = require('url')
+var stop = require('stop')
 
-ssg.render({
-  pages: [
-    '/',
-    '/active',
-    '/completed'
-  ]
-}, function () {
+stop.getWebsiteStream('http://localhost:3000/', {
+  filter: function (currentURL) {
+    return url.parse(currentURL).hostname === 'localhost'
+  },
+  parallel: 1
+})
+.syphon(stop.addFavicon())
+.syphon(stop.log())
+.syphon(stop.checkStatusCodes([200]))
+.syphon(stop.writeFileSystem(__dirname + '/static'))
+.wait().done(function () {
   server.close()
 })
