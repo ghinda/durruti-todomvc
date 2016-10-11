@@ -12,7 +12,7 @@
     "client-dev": "./node_modules/.bin/watchify client.js -o public/client.js -v -d",
     "clean": "rm -rf static/*",
     "copy": "cp -r node_modules/todomvc* static/ && cp -r public/* static/",
-    "static": "npm run clean && npm run copy && node static-generator"
+    "static": "node static-generator"
   },
   "author": "",
   "license": "MIT",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "es6-templates": "^0.2.2",
     "nodemon": "^1.9.2",
+    "stop": "^3.1.0",
     "watchify": "^3.7.0"
   }
 }
