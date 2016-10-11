@@ -49,7 +49,11 @@ function defaultRoute (req, res) {
         ${durruti.render(Router)}
       </div>
 
-      ${taskListStore.options.state.render()}
+      <script>
+        window['DURRUTI_STATE'] = {
+          taskListStore: ${JSON.stringify(taskListStore.get())}
+        }
+      </script>
 
       <footer class="info">
         <p>Double-click to edit a todo</p>

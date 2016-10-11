@@ -10,8 +10,6 @@
     "dev": "./node_modules/.bin/nodemon server & npm run client-dev",
     "client": "./node_modules/.bin/browserify -t es6-templates client.js -o public/client.js",
     "client-dev": "./node_modules/.bin/watchify client.js -o public/client.js -v -d",
-    "clean": "rm -rf static/*",
-    "copy": "cp -r node_modules/todomvc* static/ && cp -r public/* static/",
     "static": "node static-generator"
   },
   "author": "",
@@ -21,7 +19,7 @@
     "browserify": "^13.0.1",
     "cookie-session": "^2.0.0-alpha.1",
     "cors": "^2.7.1",
-    "durruti": "0.0.5",
+    "durruti": "0.0.10",
     "express": "^4.13.4",
     "todomvc-app-css": "^2.0.6",
     "todomvc-common": "^1.0.2"
